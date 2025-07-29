@@ -1,0 +1,134 @@
+
+===========================
+JavaScript: Rest/Spread Operators, Objects & Arrays in Functions
+===========================
+
+This file explains several JavaScript concepts:
+- Rest Operator (...rest)
+- Passing Objects to Functions
+- Passing Arrays to Functions
+With well-commented examples and explanations.
+
+--------------------------------------------------
+Example 1: Rest Operator - Collecting Arguments
+--------------------------------------------------
+function calculateCartPrice(...num) {
+  return num;
+}
+const price = calculateCartPrice(199, 200, 300);
+console.log(price);  // Output: [199, 200, 300]
+
+Explanation:
+- '...num' uses the rest operator to collect all arguments into an array named 'num'.
+- Useful when the number of arguments is unknown.
+
+New Example:
+function collectNames(...names) {
+  return names;
+}
+console.log(collectNames("Ali", "Zara", "Hamdan")); // ["Ali", "Zara", "Hamdan"]
+
+--------------------------------------------------
+Example 2: Rest with Fixed Parameters
+--------------------------------------------------
+function calculateCartPrice(price1, price2, ...price3) {
+  return price3;
+}
+const price2 = calculateCartPrice(199, 200, 300, 400);
+console.log(price2);  // Output: [300, 400]
+
+Explanation:
+- The first two arguments are stored in price1 and price2.
+- Remaining values are stored in price3 as an array.
+
+New Example:
+function introduce(first, last, ...titles) {
+  console.log(`Full name: ${first} ${last}`);
+  console.log(`Titles: ${titles}`);
+}
+introduce("Dr.", "Khan", "MBBS", "PhD", "FRCS");
+
+--------------------------------------------------
+Example 3: Passing an Object to a Function
+--------------------------------------------------
+const student = {
+  name: "Hamdan",
+  age: 3,
+  class: "PG",
+};
+
+function handleObj(anyObj) {
+  console.log(`Student: ${anyObj.name}, Age: ${anyObj.age}, Class: ${anyObj.class}`);
+}
+handleObj(student);
+
+Explanation:
+- The function receives an object and accesses its properties using dot notation.
+
+New Example:
+const book = {
+  title: "JavaScript Guide",
+  author: "MDN",
+};
+function printBook(info) {
+  console.log(`Title: ${info.title}, Author: ${info.author}`);
+}
+printBook(book);
+
+--------------------------------------------------
+Example 4: Passing Object Directly
+--------------------------------------------------
+handleObj({
+  name: "Hamdan Khan",
+  age: 4,
+  class: "Nursery"
+});
+
+Explanation:
+- We can directly pass an object literal without storing it in a variable.
+
+New Example:
+printBook({
+  title: "Learn Python",
+  author: "Faisal"
+});
+
+--------------------------------------------------
+Example 5: Passing Array to Function
+--------------------------------------------------
+const cartPrice = [100, 200, 300];
+
+function handleArrays(getArray) {
+  return getArray[2];
+}
+console.log(handleArrays(cartPrice));  // Output: 300
+
+Explanation:
+- We pass an array and access the 3rd item using index 2.
+
+New Example:
+function lastItem(arr) {
+  return arr[arr.length - 1];
+}
+console.log(lastItem(["apple", "banana", "mango"])); // Output: mango
+
+===========================
+Summary of Key Concepts
+===========================
+
+1. Rest Operator (...) in Function Parameters:
+   - Collects extra arguments into an array.
+   - Useful for variable number of inputs.
+
+2. Passing Objects:
+   - Allows grouping related data.
+   - Can be passed via variable or directly.
+
+3. Passing Arrays:
+   - Helps handle list of items.
+   - Easily access elements using indexes.
+
+You can now use these concepts to build mini projects like:
+- Shopping Cart Calculator
+- Student Data Logger
+- Array Utility Tools

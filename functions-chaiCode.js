@@ -1,84 +1,84 @@
-// Functions in Javascript // Lecture by Chai aur Code
+// // Functions in Javascript // Lecture by Chai aur Code
 
-// // fuction = A section of reuseable code.
-//             Decalre code once change, use use whenever you wnat.
-//              call the function to execute that code.
+// // // fuction = A section of reuseable code.
+// //             Decalre code once change, use use whenever you wnat.
+// //              call the function to execute that code.
 
-// --------First Example ----------//
+// // --------First Example ----------//
 
-// function myFun1(number1, number2){
-// console.log(number1+number2);
+// // function myFun1(number1, number2){
+// // console.log(number1+number2);
 
+// // }
+
+// // myFun1(1,2); // Output: 3
+// // myFun1(1, "3"); // Output: 13
+// // const result = myFun1(1,2)
+// // console.log("Result: ", result); // undefined, here if we make a variable then  we dont need to add  console.log() inside of the function.
+
+// // ------ Example with return keyword --------//
+
+// function myFun2(number1, number2) {
+//   // let result = number1 + number2
+//   // return result
+//   return number1 + number2;
 // }
-
-// myFun1(1,2); // Output: 3
-// myFun1(1, "3"); // Output: 13
-// const result = myFun1(1,2)
-// console.log("Result: ", result); // undefined, here if we make a variable then  we dont need to add  console.log() inside of the function.
-
-// ------ Example with return keyword --------//
-
-function myFun2(number1, number2) {
-  // let result = number1 + number2
-  // return result
-  return number1 + number2;
-}
-const result = myFun2(200, 100);
-// console.log("Result: ", result);
+// const result = myFun2(200, 100);
+// // console.log("Result: ", result);
 
 
 
 
-// ------ Example with one parameter --------//
+// // ------ Example with one parameter --------//
 
-function myfun3(username){
-    return `${username} just logged in`
+// function myfun3(username){
+//     return `${username} just logged in`
     
-}
-// const userDisplay = myfun3("Muhammad Hamdan Khan")
-// console.log(userDisplay);
+// }
+// // const userDisplay = myfun3("Muhammad Hamdan Khan")
+// // console.log(userDisplay);
 
-// console.log(myfun3("Muhammad Hamdan Khan"));
+// // console.log(myfun3("Muhammad Hamdan Khan"));
 
 
 
-// ------ More Example with if condition --------//
+// // ------ More Example with if condition --------//
 
-// function myFun4(username){
+// // function myFun4(username){
+// //     // if(username === undefined){
+// //     //     console.log("please enter username");
+// //     //     return
+        
+// //     // }
+// //     if(!username){
+// //         // console.log("please enter username");
+// //         return
+        
+// //     }
+// //     return `${username} logged in`
+    
+// // }
+// // const myuser = myFun4("Hamdan Khan")
+// // // console.log(myuser)
+
+
+
+// function myFun4(username = "Hamdan"){
 //     // if(username === undefined){
 //     //     console.log("please enter username");
 //     //     return
         
 //     // }
 //     if(!username){
-//         // console.log("please enter username");
+//         console.log("please enter username");
 //         return
         
 //     }
 //     return `${username} logged in`
     
 // }
-// const myuser = myFun4("Hamdan Khan")
-// // console.log(myuser)
-
-
-
-function myFun4(username = "Hamdan"){
-    // if(username === undefined){
-    //     console.log("please enter username");
-    //     return
-        
-    // }
-    if(!username){
-        console.log("please enter username");
-        return
-        
-    }
-    return `${username} logged in`
-    
-}
-const myuser = myFun4("Hamdan Khan") // here value to be overwrited e.g default value is "Hamdan" then replaced into "Hamdan Khan"
-console.log(myuser)
+// const myuser = myFun4("Hamdan Khan") // here value to be overwrited e.g default value is "Hamdan" then replaced into "Hamdan Khan"
+// console.log(myuser)
 
 
 
@@ -227,6 +227,35 @@ function authenticateUser(username = "guest", password) {
 console.log(authenticateUser("admin", "secret123")); // "Admin access granted"
 console.log(authenticateUser("", "pass"));           // "Username and password required"
 console.log(authenticateUser("user"));               // "Username and password required"
+
+
+
+/ ==============================
+// Additional Example 6: Summing All Numbers Using Rest Operator
+// ==============================
+
+// Use rest operator to gather all inputs into an array and sum them using loop
+function sumAll(...numbers) {
+  let total = 0;
+  for (let num of numbers) {
+    total += num;
+  }
+  return total;
+}
+
+console.log("Example 6 Output:", sumAll(10, 20, 30)); // Output: 60
+
+// ==============================
+// Additional Example 7: Function with Default Parameters and Object
+// ==============================
+
+// Default parameter used if no value is provided during function call
+function registerUser({ name = "Guest", age = 18 } = {}) {
+  return `User ${name} is ${age} years old.`;
+}
+
+console.log("Example 7 Output:", registerUser({ name: "Ali", age: 25 })); // Output: User Ali is 25 years old.
+console.log("Example 7 Output with default:", registerUser()); // Output: User Guest is 18 years old
 
 // =================================================================
 // KEY TAKEAWAYS (LECTURE SUMMARY)
