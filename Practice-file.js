@@ -43,6 +43,7 @@ let myNN = "12" //  Using unary plus to convert string to number
 let nM = +myNN
 
 // console.log(typeof nM);
+// console.log(nM);
 
 // one more Unary example 
 
@@ -85,7 +86,7 @@ let myObj = {
     right: 2
 }
 
-delete myObj.left  // false
+delete myObj.left  
 // console.log(myObj.left); // undefined
 
 
@@ -107,10 +108,10 @@ let result = Object.assign(objectA, objectB, objectC);
 // console.log(result);
 
 
-// let myV = "22"
-// let myV2 = 22
+let myV = "22"
+let myV2 = 22
 
-// let myV3 = myV = myV2
+let myV3 = myV = myV2
 // console.log(typeof myV3);
 
 
@@ -119,15 +120,54 @@ let result = Object.assign(objectA, objectB, objectC);
 // EXAMPLE 6 
 
 
-const score = {
-    visitor: 1,
-    home: 0
-}
-score.visitor = "Khan"; // This is Okay
+// const score = {
+//     visitor: 1,
+//     home: 0
+// }
+// score.visitor = "Khan"; // This is Okay
 
-score = { // but this is not okay due to const declaration of above
-    visitor: 3,
-    home: 3
+// score = { // but this is not okay due to const declaration of above
+//     visitor: 3,
+//     home: 3
+// }
+// console.log(score.visitor);
+
+
+// DeStructuring 
+
+const myJob = {
+    title: "Web Dev",
+    Dept: "SeekDigit"
 }
-console.log(score.visitor);
+
+myJob.title = "Senior Web Developer"
+
+const {title:tName} = myJob
+
+console.log(tName);
+
+// console.log(Object.keys(myJob)); // to check object keys 
+// console.log(Object.values(myJob)); // to check object values
+
+let a = 1;
+let b = 2 ;
+
+[a,b] = [b, a];
+
+// console.log(a);
+// console.log(b);
+
+
+const person = {
+    isHuman: false,
+    printIntro(){
+        console.log(`My name is ${this.name}. Am I Human ${this.isHuman} `);
+
+    }
+ 
+}
+const me = Object.create(person);
+
+me.name = "Faisal";
+   me.printIntro();
 
