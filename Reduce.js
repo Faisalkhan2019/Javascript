@@ -3,7 +3,7 @@
 
 //Example - 1 // we can use the arrow function 
 
-// const myArr = [10, 20, 30, 40, 50]
+// const prices = [10, 20, 30, 40, 50]
 
 // const mySum = myArr.reduce((accumulator, currentValue) => {
 //     return accumulator + currentValue;
