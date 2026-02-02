@@ -44,7 +44,7 @@ const myStringTrim = "    Hamdan   "
 
 const url = "https://seekdigit.com/my%20web%20page"
 
-// console.log(url.replace('%20', '-')) //https://seekdigit.com/my-web%20page
+// console.log(url.replace('%20', '-')) //https://seekdigit.com/my-web-page
 
 // --------ReplaceAll('Find', 'replace')--------
 
